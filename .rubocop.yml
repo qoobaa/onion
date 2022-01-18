@@ -1,0 +1,28 @@
+require: rubocop-rails
+
+AllCops:
+  NewCops: enable
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Layout/LineLength:
+  Enabled: false
+
+Rails/NotNullColumn:
+  Enabled: false
+
+Rails/CreateTableWithTimestamps:
+  Enabled: false
