@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+form.button_to {
+    display: inline-block;
+}
+
+.field_with_errors {
+    display: inline;
+    color: var(--code);
+}

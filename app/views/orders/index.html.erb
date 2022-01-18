@@ -1,0 +1,36 @@
+<h2>
+  Orders
+</h2>
+
+<%= link_to "New Order", new_order_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>Opis</th>
+      <th>Kwota</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @orders.empty? %>
+      <tr>
+        <td colspan="3">Brak pozycji</td>
+      </tr>
+    <% else %>
+      <% @orders.each do |order| %>
+        <tr>
+          <td><%= time_tag(order.date) %></td>
+          <td><%= order.description %></td>
+          <td><%= number_to_currency(order.total) %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="2">Suma</td>
+      <td><%= number_to_currency(@orders.sum(:total)) %></td>
+    </tr>
+  </tfoot>
+</table>

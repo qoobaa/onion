@@ -6,11 +6,30 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag 'application', 'data-turbo-track': 'reload' %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <nav>
+        <%= link_to 'Home', root_path %>
+        <%= link_to 'Orders', orders_path %>
+        <%= link_to 'Imports', new_import_path %>
+      </nav>
+      <h1>Onion</h1>
+      <p>
+        <% if Current.user? %>
+          <%= Current.user.email %>
+          <%= button_to 'Logout', session_path, method: 'delete' if Current.user? %>
+        <% else %>
+          <%= button_to 'Login', '/auth/allegro', data: { turbo: 'false' } unless Current.user? %>
+        <% end %>
+      </p>
+    </header>
+
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>

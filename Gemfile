@@ -9,9 +9,9 @@ gem 'rails', '~> 7.0.0'
 
 gem 'bootsnap', require: false
 gem 'importmap-rails'
-gem 'jbuilder'
 gem 'pg'
 gem 'puma'
+gem 'rails-i18n'
 gem 'redis'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
@@ -35,6 +35,7 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  gem 'erb_lint', require: false
   gem 'rubocop'
 end
 

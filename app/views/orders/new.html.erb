@@ -1,0 +1,25 @@
+<h3>New Order</h3>
+
+<%= form_with model: @order do |form| %>
+  <p>
+    <%= form.label :date %><br>
+    <%= form.date_field :date %><br>
+    <%= form.object.errors[:date].join(', ') %>
+  </p>
+
+  <p>
+    <%= form.label :total %><br>
+    <%= form.number_field :total, step: '0.01' %><br>
+    <%= form.object.errors[:total].join(', ') %>
+  </p>
+
+  <p>
+    <%= form.label :description %><br>
+    <%= form.text_field :description %><br>
+    <%= form.object.errors[:description].join(', ') %>
+  </p>
+
+  <p>
+    <%= button_tag "Submit", type: "submit" %>
+  </p>
+<% end %>

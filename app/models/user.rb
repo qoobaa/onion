@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  has_many :orders
+
   encrypts :access_token, :refresh_token
 
   def self.find_or_create_by_auth(auth)
